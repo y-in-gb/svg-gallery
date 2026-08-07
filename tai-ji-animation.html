@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>太极动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #261025;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        .card {
+            background: #5b2551;
+            padding: 2.5rem 3rem 2rem;
+            border-radius: 4rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), inset 0 0 0 1px #3d455c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .canvas-wrap {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: #5b2551;
+            box-shadow: 0 0 0 6px #261025, 0 20px 40px rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #taiji {
+            width: 280px;
+            height: 280px;
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.06));
+            border-radius: 50%;
+        }
+        .info {
+            margin-top: 1.8rem;
+            color: #b457c1;
+            letter-spacing: 2px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .badge {
+            background: #261025;
+            padding: 0.3rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid #b457c1;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #b457c1;
+            border-radius: 50%;
+            animation: pulse 1.2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        .controls {
+            margin-top: 1.2rem;
+            display: flex;
+            gap: 1.2rem;
+        }
+        .controls button {
+            background: #261025;
+            border: none;
+            color: #b457c1;
+            padding: 0.4rem 1.6rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+            border: 1px solid #b457c1;
+            transition: 0.2s;
+        }
+        .controls button:hover {
+            background: #b457c1;
+            border-color: #b457c1;
+            color: #fff;
+        }
+        .controls button:active {
+            transform: scale(0.94);
+        }
+        .fps-hint {
+            color: #b457c1;
+            font-size: 0.75rem;
+            margin-top: 0.6rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="canvas-wrap">
+            <svg id="taiji" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- 内容由 JS 动态绘制 -->
+            </svg>
+        </div>
+
+        <div class="info">
+            <span class="badge"> 旋转 · 30°/帧</span>
+            <span class="dot"></span>
+            <span id="frameDisplay" class="badge">0°</span>
+        </div>
+
+        <div class="controls">
+            <button id="playBtn">⏸ 暂停</button>
+            <button id="resetBtn">⟲ 复位</button>
+        </div>
+        <div class="fps-hint">代码已开源至个人GitHub仓库：svg-gallery</div>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- 核心：生成太极 SVG 内部元素 (角度 0~330) ----------
+            function buildTaiji(deg) {
+                // 将角度归一化到 0~360
+                const angle = ((deg % 360) + 360) % 360;
+
+                // 所有图形都包裹在 <g transform="rotate(角度, 100, 100)"> 内
+                return `
+                    <defs>
+                        <clipPath id="clip">
+                            <circle cx="100" cy="100" r="90" />
+                        </clipPath>
+                    </defs>
+                    <!-- 底圆 -->
+                    <circle cx="100" cy="100" r="90" fill="#141414" stroke="#2a2a2a" stroke-width="0.8" />
+                    <g clip-path="url(#clip)" transform="rotate(${angle}, 100, 100)">
+                        <!-- 白底 (阳) -->
+                        <rect x="0" y="0" width="200" height="200" fill="#f4f4f4" />
+                        <!-- 黑色半圆 (阴) 右侧 -->
+                        <path d="M100,10 A90,90 0 0,1 100,190 A45,45 0 0,1 100,100 A45,45 0 0,0 100,10 Z" fill="#141414" />
+                        <!-- 白眼 (阳中阴眼) -->
+                        <circle cx="100" cy="145" r="18" fill="#f4f4f4" />
+                        <!-- 黑眼 (阴中阳眼) -->
+                        <circle cx="100" cy="55" r="18" fill="#141414" />
+                    </g>
+                    <!-- 外圈描边 (装饰) -->
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#6a7a9a" stroke-width="0.6" opacity="0.3" />
+                `;
+            }
+
+            // ---------- DOM 引用 ----------
+            const svgEl = document.getElementById('taiji');
+            const frameDisplay = document.getElementById('frameDisplay');
+
+            // ---------- 状态 ----------
+            let currentAngle = 0;          // 当前角度 (度)
+            let animationId = null;
+            let isPlaying = true;
+
+            // 帧间隔 (ms)  约 250ms = 4fps，每帧转 30°
+            const FRAME_INTERVAL = 250;
+
+            // ---------- 渲染函数 ----------
+            function render(angle) {
+                svgEl.innerHTML = buildTaiji(angle);
+                // 显示当前角度 (取整)
+                const displayDeg = ((angle % 360) + 360) % 360;
+                frameDisplay.textContent = Math.round(displayDeg) + '°';
+            }
+
+            // ---------- 步进函数 (顺时针 +30°) ----------
+            function stepForward() {
+                currentAngle = (currentAngle + 30) % 360;
+                render(currentAngle);
+            }
+
+            // ---------- 动画循环 (setInterval 风格) ----------
+            let timer = null;
+
+            function startAnimation() {
+                if (timer) return;
+                isPlaying = true;
+                document.getElementById('playBtn').textContent = '⏸ 暂停';
+                timer = setInterval(() => {
+                    stepForward();
+                }, FRAME_INTERVAL);
+            }
+
+            function stopAnimation() {
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+                isPlaying = false;
+                document.getElementById('playBtn').textContent = '▶ 播放';
+            }
+
+            function togglePlay() {
+                if (isPlaying) {
+                    stopAnimation();
+                } else {
+                    startAnimation();
+                }
+            }
+
+            // ---------- 复位 ----------
+            function resetAnimation() {
+                // 停止动画
+                stopAnimation();
+                // 回到 0°
+                currentAngle = 0;
+                render(currentAngle);
+                // 如果之前是播放状态，重启
+                if (isPlaying) {
+                    startAnimation();
+                } else {
+                    // 如果暂停，保持暂停但复位
+                    document.getElementById('playBtn').textContent = '▶ 播放';
+                }
+            }
+
+            // ---------- 绑定按钮 ----------
+            document.getElementById('playBtn').addEventListener('click', togglePlay);
+            document.getElementById('resetBtn').addEventListener('click', resetAnimation);
+
+            // ---------- 初始化 ----------
+            render(0);
+            // 自动开始播放
+            startAnimation();
+        })();
+    </script>
+</body>
+</html>
