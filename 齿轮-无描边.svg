@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" width="400" height="400">
+  <!-- 白色背景 -->
+  <rect x="-110" y="-110" width="220" height="220" fill="#ffffff"/>
+  
+  <!-- 齿轮主体 - 大圆 r=60 -->
+  <circle cx="0" cy="0" r="60" fill="#888888"/>
+  
+  <!-- 齿 - 围绕大圆均匀分布，每27.69度一个，齿宽32 -->
+  <g fill="#888888">
+    <!-- 使用13个齿 (360/13 = 27.69度) -->
+    <!-- 齿从 y=-78 开始 (60+18)，垂直向外延伸 -->
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(0)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(27.69)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(55.38)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(83.07)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(110.76)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(138.45)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(166.14)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(193.83)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(221.52)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(249.21)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(276.9)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(304.59)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(332.28)"/>
+  </g>
+  
+  <!-- 空心小圆（轴心孔） -->
+  <circle cx="0" cy="0" r="25" fill="#ffffff"/>
+</svg>
