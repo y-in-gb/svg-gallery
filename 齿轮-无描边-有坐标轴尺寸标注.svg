@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" width="400" height="400">
+  <!-- 白色背景 -->
+  <rect x="-110" y="-110" width="220" height="220" fill="#ffffff"/>
+  
+  <!-- ===== 坐标轴 ===== -->
+  <line x1="-110" y1="0" x2="110" y2="0" stroke="#e74c3c" stroke-width="1.5" />
+  <line x1="0" y1="-110" x2="0" y2="110" stroke="#3498db" stroke-width="1.5" />
+
+  <!-- X轴刻度 -->
+  <g font-size="9" fill="#e74c3c" text-anchor="middle">
+    <line x1="-100" y1="0" x2="-100" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="-100" y="16">-100</text>
+    <line x1="-80" y1="0" x2="-80" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="-80" y="16">-80</text>
+    <line x1="-60" y1="0" x2="-60" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="-60" y="16">-60</text>
+    <line x1="-40" y1="0" x2="-40" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="-40" y="16">-40</text>
+    <line x1="-20" y1="0" x2="-20" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="-20" y="16">-20</text>
+    <line x1="20" y1="0" x2="20" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="20" y="16">20</text>
+    <line x1="40" y1="0" x2="40" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="40" y="16">40</text>
+    <line x1="60" y1="0" x2="60" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="60" y="16">60</text>
+    <line x1="80" y1="0" x2="80" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="80" y="16">80</text>
+    <line x1="100" y1="0" x2="100" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="100" y="16">100</text>
+  </g>
+
+  <!-- Y轴刻度 -->
+  <g font-size="9" fill="#3498db" text-anchor="end">
+    <line x1="0" y1="-100" x2="-5" y2="-100" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="-95">-100</text>
+    <line x1="0" y1="-80" x2="-5" y2="-80" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="-75">-80</text>
+    <line x1="0" y1="-60" x2="-5" y2="-60" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="-55">-60</text>
+    <line x1="0" y1="-40" x2="-5" y2="-40" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="-35">-40</text>
+    <line x1="0" y1="-20" x2="-5" y2="-20" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="-15">-20</text>
+    <line x1="0" y1="20" x2="-5" y2="20" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="25">20</text>
+    <line x1="0" y1="40" x2="-5" y2="40" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="45">40</text>
+    <line x1="0" y1="60" x2="-5" y2="60" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="65">60</text>
+    <line x1="0" y1="80" x2="-5" y2="80" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="85">80</text>
+    <line x1="0" y1="100" x2="-5" y2="100" stroke="#3498db" stroke-width="1" />
+    <text x="-10" y="105">100</text>
+  </g>
+
+  <text x="5" y="-12" font-size="10" fill="#2c3e50" font-weight="bold">(0,0)</text>
+  <text x="100" y="-8" font-size="11" fill="#e74c3c" font-weight="bold">→ X</text>
+  <text x="-12" y="-100" font-size="11" fill="#3498db" font-weight="bold">↑ Y</text>
+
+  <!-- 辅助网格 -->
+  <g stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4">
+    <line x1="-100" y1="-110" x2="-100" y2="110" />
+    <line x1="-80" y1="-110" x2="-80" y2="110" />
+    <line x1="-60" y1="-110" x2="-60" y2="110" />
+    <line x1="-40" y1="-110" x2="-40" y2="110" />
+    <line x1="-20" y1="-110" x2="-20" y2="110" />
+    <line x1="20" y1="-110" x2="20" y2="110" />
+    <line x1="40" y1="-110" x2="40" y2="110" />
+    <line x1="60" y1="-110" x2="60" y2="110" />
+    <line x1="80" y1="-110" x2="80" y2="110" />
+    <line x1="100" y1="-110" x2="100" y2="110" />
+    <line x1="-110" y1="-100" x2="110" y2="-100" />
+    <line x1="-110" y1="-80" x2="110" y2="-80" />
+    <line x1="-110" y1="-60" x2="110" y2="-60" />
+    <line x1="-110" y1="-40" x2="110" y2="-40" />
+    <line x1="-110" y1="-20" x2="110" y2="-20" />
+    <line x1="-110" y1="20" x2="110" y2="20" />
+    <line x1="-110" y1="40" x2="110" y2="40" />
+    <line x1="-110" y1="60" x2="110" y2="60" />
+    <line x1="-110" y1="80" x2="110" y2="80" />
+    <line x1="-110" y1="100" x2="110" y2="100" />
+  </g>
+  
+  <!-- 齿轮主体 - 大圆 r=60 -->
+  <circle cx="0" cy="0" r="60" fill="#888888"/>
+  
+  <!-- 齿 - 围绕大圆均匀分布，每27.69度一个，齿宽32 -->
+  <g fill="#888888">
+    <!-- 使用13个齿 (360/13 = 27.69度) -->
+    <!-- 齿从 y=-78 开始 (60+18)，垂直向外延伸 -->
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(0)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(27.69)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(55.38)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(83.07)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(110.76)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(138.45)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(166.14)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(193.83)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(221.52)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(249.21)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(276.9)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(304.59)"/>
+    <rect x="-16" y="-78" width="32" height="20" rx="1" transform="rotate(332.28)"/>
+  </g>
+  
+  <!-- 空心小圆（轴心孔） -->
+  <circle cx="0" cy="0" r="25" fill="#ffffff"/>
+  
+  <!-- ===== 尺寸标注 ===== -->
+  
+  <!-- 齿宽标注 (32) - 顶部齿 -->
+  <line x1="-16" y1="-90" x2="-16" y2="-78" stroke="#2c3e50" stroke-width="1.5"/>
+  <line x1="16" y1="-90" x2="16" y2="-78" stroke="#2c3e50" stroke-width="1.5"/>
+  <line x1="-16" y1="-90" x2="16" y2="-90" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="0" y="-94" text-anchor="middle" font-size="10" fill="#2c3e50" font-family="Arial">齿宽32</text>
+  
+  <!-- 齿高标注 (20) - 顶部齿右侧 -->
+  <line x1="20" y1="-78" x2="20" y2="-58" stroke="#2c3e50" stroke-width="1.5"/>
+  <text x="24" y="-67" text-anchor="start" font-size="10" fill="#2c3e50" font-family="Arial">齿高20</text>
+  
+  <!-- 分度圆半径 (R60) - 标注在右下方45度方向 -->
+  <line x1="0" y1="0" x2="42.43" y2="42.43" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="30" y="52" text-anchor="middle" font-size="10" fill="#27ae60" font-family="Arial">R60</text>
+  <circle cx="0" cy="0" r="60" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  
+  <!-- 轴心孔半径 (R25) - 标注在左上方45度方向 -->
+  <line x1="0" y1="0" x2="-17.68" y2="-17.68" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="-30" y="-28" text-anchor="middle" font-size="10" fill="#e67e22" font-family="Arial">轴孔R25</text>
+  <circle cx="0" cy="0" r="25" fill="none" stroke="#e67e22" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  
+  <!-- 齿顶圆标注 - 缩短到与X轴-80到80范围一致 -->
+  <line x1="-80" y1="45" x2="80" y2="45" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="-80" y1="45" x2="-80" y2="52" stroke="#e74c3c" stroke-width="1"/>
+  <line x1="80" y1="45" x2="80" y2="52" stroke="#e74c3c" stroke-width="1"/>
+  <text x="0" y="62" text-anchor="middle" font-size="10" fill="#e74c3c" font-family="Arial">齿顶圆直径160</text>
+  
+  <!-- 齿顶圆辅助虚线圆 -->
+  <circle cx="0" cy="0" r="80" fill="none" stroke="#e74c3c" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+  
+  <!-- 齿顶圆上标注R80 -->
+  <text x="55" y="-62" text-anchor="start" font-size="9" fill="#e74c3c" font-family="Arial" opacity="0.6">R80</text>
+</svg>
