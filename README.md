@@ -1,38 +1,38 @@
-# SVG 使用场景展廊 (SVG Gallery)
+<div align="center">
 
-## ☯ 太极动画 (tai-ji animation)
+# AI-generated SVG Usecase Gallery
 
-- 由 HTML、CSS、JS 和 SVG 构建
-- 零安装
+**English** | [中文🇨🇳](README-zh.md)
 
-👉 可用任意网页浏览器打开 [太极动画](tai-ji-animation.html) 进行交互
+</div>
 
+## ☯ Tai-Ji Animation
 
-- Build with HTML, CSS, JS, and SVG
-- 0 software installation
+- Built with HTML, CSS, JS, and SVG
+- 0 software installation required
 
-👉 Interact with [tai-ji animation](tai-ji-animation.html) in any web browser
-
----
-
-## ⚙️ 齿轮图纸
-- 纯 SVG 构建
-- 零安装
-
-可用任意网页浏览器打开以下svg文件进行修改：
-- [齿轮-无描边-有坐标轴尺寸标注.svg](齿轮-无描边-有坐标轴尺寸标注.svg)
-- [齿轮-无描边.svg](齿轮-无描边.svg)
-- [齿轮-有描边.svg](齿轮-有描边.svg)
+You can interact with [Tai-Ji Animation](tai-ji-animation.html) in any web browser
 
 ---
 
-## 🎨 画画 - 丹凤眼
-- 纯 SVG 构建
-- 零安装
+## ⚙️ Gear Design
+- Pure SVG built
+- 0 software installation required
 
-可用任意网页浏览器打开以下svg文件进行修改：
-- [丹凤眼-有坐标轴与标注.svg](丹凤眼-有坐标轴与标注.svg)
-- [丹凤眼-有坐标轴-无标注.svg](丹凤眼-有坐标轴-无标注.svg)
+Open the following SVG files in any web browser for viewing, or open the files in any editor to modify the code:
+- [Gear design without stroke, with coordinate axis, and with dimension labels](齿轮-无描边-有坐标轴尺寸标注.svg)
+- [Gear design without stroke](齿轮-无描边.svg)
+- [Gear design with stroke](齿轮-有描边.svg)
+
+---
+
+## 🎨 Dan-Feng-Eye Drawing
+- Pure SVG built
+- 0 software installation required
+
+Open the following SVG files in any web browser for viewing, or open the files in any editor to modify the code:
+- [Drawing of Dan-Feng-Eye with coordinate axis and coordinate labels](丹凤眼-有坐标轴与标注.svg)
+- [Drawing of Dan-Feng-Eye with coordinate axis, and without coordinate labels](丹凤眼-有坐标轴-无标注.svg)
 
 ---
 
