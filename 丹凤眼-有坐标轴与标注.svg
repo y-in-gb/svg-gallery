@@ -1,0 +1,138 @@
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="400" height="250" fill="#f8f9fa" />
+
+  <!-- ===== 坐标轴 ===== -->
+  <line x1="0" y1="0" x2="0" y2="250" stroke="#e74c3c" stroke-width="1.5" />
+  <line x1="0" y1="0" x2="400" y2="0" stroke="#3498db" stroke-width="1.5" />
+
+  <!-- X轴刻度 -->
+  <g font-size="10" fill="#e74c3c" text-anchor="middle">
+    <line x1="50" y1="0" x2="50" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="50" y="18">50</text>
+    <line x1="100" y1="0" x2="100" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="100" y="18">100</text>
+    <line x1="150" y1="0" x2="150" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="150" y="18">150</text>
+    <line x1="200" y1="0" x2="200" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="200" y="18">200</text>
+    <line x1="250" y1="0" x2="250" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="250" y="18">250</text>
+    <line x1="300" y1="0" x2="300" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="300" y="18">300</text>
+    <line x1="350" y1="0" x2="350" y2="5" stroke="#e74c3c" stroke-width="1" />
+    <text x="350" y="18">350</text>
+  </g>
+
+  <!-- Y轴刻度 -->
+  <g font-size="10" fill="#3498db" text-anchor="end">
+    <line x1="0" y1="50" x2="5" y2="50" stroke="#3498db" stroke-width="1" />
+    <text x="12" y="54">50</text>
+    <line x1="0" y1="100" x2="5" y2="100" stroke="#3498db" stroke-width="1" />
+    <text x="12" y="104">100</text>
+    <line x1="0" y1="150" x2="5" y2="150" stroke="#3498db" stroke-width="1" />
+    <text x="12" y="154">150</text>
+    <line x1="0" y1="200" x2="5" y2="200" stroke="#3498db" stroke-width="1" />
+    <text x="12" y="204">200</text>
+  </g>
+
+  <text x="5" y="12" font-size="11" fill="#2c3e50" font-weight="bold">(0,0)</text>
+  <text x="390" y="12" font-size="12" fill="#e74c3c" font-weight="bold">→ X</text>
+  <text x="12" y="240" font-size="12" fill="#3498db" font-weight="bold">↑ Y</text>
+
+  <!-- 辅助网格 -->
+  <g stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4">
+    <line x1="50" y1="0" x2="50" y2="250" />
+    <line x1="100" y1="0" x2="100" y2="250" />
+    <line x1="150" y1="0" x2="150" y2="250" />
+    <line x1="200" y1="0" x2="200" y2="250" />
+    <line x1="250" y1="0" x2="250" y2="250" />
+    <line x1="300" y1="0" x2="300" y2="250" />
+    <line x1="350" y1="0" x2="350" y2="250" />
+    <line x1="0" y1="50" x2="400" y2="50" />
+    <line x1="0" y1="100" x2="400" y2="100" />
+    <line x1="0" y1="150" x2="400" y2="150" />
+    <line x1="0" y1="200" x2="400" y2="200" />
+  </g>
+
+  <!-- ===== 丹凤眼 ===== -->
+  <path d="M 230,50
+           Q 280,45 330,30
+           Q 280,110 200,115
+           Q 100,120 100,120
+           Q 75,115 100,90
+           Q 110,75 130,65
+           Q 160,52 230,50 Z"
+        fill="none" stroke="black" stroke-width="2" />
+
+  <!-- 眼珠 -->
+  <circle cx="200" cy="82" r="28" fill="black" />
+  <circle cx="210" cy="68" r="9" fill="white" />
+
+  <!-- ===== 端点标注 ===== -->
+  <g font-size="9" fill="#2c3e50">
+    <!-- 起点 -->
+    <circle cx="230" cy="50" r="4" fill="#e67e22" />
+    <text x="235" y="42" fill="#e67e22" font-weight="bold">(230,50) 起点</text>
+
+    <!-- 外眼角上（眼尾上） -->
+    <circle cx="330" cy="30" r="4" fill="#e67e22" />
+    <text x="300" y="46" fill="#e67e22" font-weight="bold">(330,30) 外眼角上</text>
+
+    <!-- 外眼角下（眼尾下） -->
+    <circle cx="280" cy="110" r="4" fill="#e67e22" />
+    <text x="260" y="125" fill="#e67e22" font-weight="bold">(280,110) 外眼角下</text>
+
+    <!-- 下眼头 -->
+    <circle cx="100" cy="120" r="4" fill="#e67e22" />
+    <text x="62" y="118" fill="#e67e22" font-weight="bold">(100,120) 下眼头</text>
+
+    <!-- 眼角中间点 -->
+    <circle cx="100" cy="90" r="4" fill="#2ecc71" />
+    <text x="105" y="85" fill="#2ecc71" font-weight="bold">(100,90) 眼角中间</text>
+
+    <!-- 上眼头 -->
+    <circle cx="130" cy="65" r="4" fill="#e67e22" />
+    <text x="135" y="57" fill="#e67e22" font-weight="bold">(130,65) 上眼头</text>
+
+    <!-- 眼珠 -->
+    <circle cx="200" cy="82" r="4" fill="#e74c3c" />
+    <text x="210" y="96" fill="#e74c3c" font-weight="bold">(200,82) 瞳孔</text>
+  </g>
+
+  <!-- ===== 控制点标注 ===== -->
+  <g font-size="9">
+    <!-- 上眼睑右半段控制点 -->
+    <circle cx="280" cy="45" r="3.5" fill="#9b59b6" />
+    <text x="250" y="56" fill="#9b59b6">← 控制上眼睑右段弧度</text>
+
+    <!-- 外眼角控制点 -->
+    <circle cx="280" cy="110" r="3.5" fill="#9b59b6" />
+    <text x="245" y="140" fill="#9b59b6">← 控制外眼角弧度</text>
+
+    <!-- 下眼睑控制点 -->
+    <circle cx="100" cy="120" r="3.5" fill="#9b59b6" />
+    <text x="60" y="138" fill="#9b59b6">← 控制下眼睑弧度</text>
+
+    <!-- 下眼头控制点 -->
+    <circle cx="75" cy="115" r="3.5" fill="#e91e8c" />
+    <text x="40" y="110" fill="#e91e8c">← 控制下眼头弧度</text>
+
+    <!-- 上眼头控制点 -->
+    <circle cx="110" cy="75" r="3.5" fill="#e91e8c" />
+    <text x="112" y="72" fill="#e91e8c">控制上眼头弧度 →</text>
+
+    <!-- 上眼睑左半段控制点 -->
+    <circle cx="160" cy="52" r="3.5" fill="#9b59b6" />
+    <text x="162" y="48" fill="#9b59b6">控制上眼睑左段弧度 →</text>
+  </g>
+
+  <!-- ===== 眼角标注 ===== -->
+  <g font-size="11" font-weight="bold">
+    <rect x="55" y="145" width="115" height="22" rx="4" fill="#2ecc71" fill-opacity="0.85" />
+    <text x="61" y="161" fill="white">← 内眼角（眼头）</text>
+
+    <rect x="252" y="5" width="115" height="22" rx="4" fill="#3498db" fill-opacity="0.85" />
+    <text x="258" y="21" fill="white">外眼角（眼尾） →</text>
+  </g>
+</svg>
