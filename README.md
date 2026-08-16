@@ -16,6 +16,8 @@ You can interact with [Tai-Ji Animation](tai-ji-animation.html) in any web brows
 ---
 
 ## ⚙️ Gear Design
+<img src="齿轮-无描边-有坐标轴尺寸标注.svg" width="300" />
+
 - Pure SVG built
 - 0 software installation required
 
@@ -27,6 +29,8 @@ Open the following SVG files in any web browser for viewing, or open the files i
 ---
 
 ## 🎨 Dan-Feng-Eye Drawing
+<img src="丹凤眼-有坐标轴与标注.svg" width="300" />
+
 - Pure SVG built
 - 0 software installation required
 
